@@ -1,0 +1,37 @@
+using System;
+
+class Vehiculo  // Clase base
+{
+    public virtual void MostrarInformacion()
+    {
+        Console.WriteLine("Este es un vehículo.");
+    }
+}
+
+class Coche : Vehiculo  // Clase derivada
+{
+    public override void MostrarInformacion()  // Sobrescribir el método
+    {
+        Console.WriteLine("Este es un coche.");
+    }
+}
+
+class Bicicleta : Vehiculo  // Otra clase derivada
+{
+    public override void MostrarInformacion()  // Sobrescribir el método
+    {
+        Console.WriteLine("Esta es una bicicleta.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Vehiculo miCoche = new Coche();
+        Vehiculo miBicicleta = new Bicicleta();
+
+        miCoche.MostrarInformacion();  // Se llama al método sobrescrito en Coche
+        miBicicleta.MostrarInformacion(); // Se llama al método sobrescrito en Bicicleta
+    }
+}
