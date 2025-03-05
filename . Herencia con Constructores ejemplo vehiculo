@@ -1,0 +1,41 @@
+using System;
+
+class Vehiculo  // Clase base
+{
+    public string Marca;
+
+    public Vehiculo(string marca)
+    {
+        Marca = marca;
+    }
+
+    public void MostrarMarca()
+    {
+        Console.WriteLine("La marca del vehículo es: " + Marca);
+    }
+}
+
+class Coche : Vehiculo  // Clase derivada
+{
+    public string Modelo;
+
+    public Coche(string marca, string modelo) : base(marca)
+    {
+        Modelo = modelo;
+    }
+
+    public void MostrarModelo()
+    {
+        Console.WriteLine("El modelo del coche es: " + Modelo);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Coche miCoche = new Coche("Toyota", "Corolla");
+        miCoche.MostrarMarca();  // Llamar al método de la clase base
+        miCoche.MostrarModelo(); // Llamar al método de la clase derivada
+    }
+}
