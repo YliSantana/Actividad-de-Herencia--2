@@ -1,0 +1,27 @@
+using System;
+
+class Animal  // Clase base
+{
+    public void Comer()
+    {
+        Console.WriteLine("El animal está comiendo.");
+    }
+}
+
+class Perro : Animal  // Clase derivada
+{
+    public void Ladrar()
+    {
+        Console.WriteLine("El perro está ladrando.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Perro miPerro = new Perro();
+        miPerro.Comer();  // Método heredado
+        miPerro.Ladrar(); // Método de la clase derivada
+    }
+}
