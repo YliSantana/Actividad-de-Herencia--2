@@ -1,0 +1,32 @@
+using System;
+
+// Interfaz para dispositivos electrónicos
+interface IDispositivo
+{
+    void Encender();
+    void Apagar();
+}
+
+// Interfaz para conexiones inalámbricas
+interface IConectividad
+{
+    void ConectarWiFi(string red);
+    void DesconectarWiFi();
+}
+
+// Clase que implementa ambas interfaces: Smartphone
+class Smartphone : IDispositivo, IConectividad
+{
+    public void Encender()
+    {
+        Console.WriteLine("El smartphone está encendido.");
+    }
+
+    public void Apagar()
+    {
+        Console.WriteLine("El smartphone está apagado.");
+    }
+
+    public void ConectarWiFi(string red)
+    {
+        Console.WriteLine($"El smartphone se ha conectado a la red Wi-Fi: {red}");
