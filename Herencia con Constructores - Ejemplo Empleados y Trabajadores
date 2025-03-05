@@ -1,0 +1,43 @@
+using System;
+
+class Empleado  // Clase base
+{
+    public string Nombre { get; set; }
+    public int Edad { get; set; }
+
+    // Constructor de la clase base
+    public Empleado(string nombre, int edad)
+    {
+        Nombre = nombre;
+        Edad = edad;
+    }
+
+    // Método para mostrar información básica del empleado
+    public void MostrarInformacion()
+    {
+        Console.WriteLine($"Nombre: {Nombre}, Edad: {Edad}");
+    }
+}
+
+class Trabajador : Empleado  // Clase derivada
+{
+    public string Cargo { get; set; }
+
+    // Constructor de la clase derivada, invoca el constructor de la clase base
+    public Trabajador(string nombre, int edad, string cargo) : base(nombre, edad)
+    {
+        Cargo = cargo;
+    }
+
+    // Método para mostrar información del trabajador
+    public void MostrarCargo()
+    {
+        Console.WriteLine($"Cargo: {Cargo}");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Creación de un ob
